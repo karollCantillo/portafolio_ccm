@@ -1,0 +1,501 @@
+/* ============================
+   Variables globales
+   ============================ */
+:root {
+  --color-bg: #FAFAF8;
+  --color-surface: #F2F1EC;
+  --color-text: #1B1D1E;
+  --color-muted: #6F6A5E;
+  --color-accent: #2F6F62;
+  --color-accent-dark: #22524A;
+  --color-border: #E4E1D8;
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius: 10px;
+  --space-sm: 0.75rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --max-width: 1080px;
+}
+
+/* ============================
+   Reset y modelo de caja
+   ============================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* ============================
+   Header / Nav (Flexbox #1)
+   ============================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 10;
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  position: relative;
+}
+
+.nav__brand {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cursor {
+  color: var(--color-accent);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav__links a {
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__links a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.nav__link.active {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Botón hamburguesa (oculto en escritorio) */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.nav__toggle-bar {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+/* ============================
+   Hero
+   ============================ */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-top: var(--space-lg);
+}
+
+.hero__text {
+  flex: 1 1 55%;
+}
+
+.hero__img {
+  flex: 1 1 35%;
+  min-width: 0;
+  max-height: 420px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+.hero__text h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: var(--space-md);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.hero__lead {
+  color: var(--color-muted);
+  margin-bottom: var(--space-md);
+  max-width: 46ch;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--color-accent);
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+/* ============================
+   Sobre mí
+   ============================ */
+.about {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+}
+
+.about__img {
+  flex: 1 1 40%;
+  min-width: 0;
+  max-height: 320px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.about__text {
+  flex: 1 1 55%;
+}
+
+.about__text h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.about__text p {
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* ============================
+   Proyectos
+   ============================ */
+.proyectos h2,
+.habilidades h2,
+.contacto h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.section-lead {
+  color: var(--color-muted);
+  margin-bottom: var(--space-md);
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: var(--space-md);
+}
+
+.filtro {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filtro:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+.filtro[aria-pressed="true"] {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+/* Flexbox #2: grid de tarjetas de proyecto */
+.proyectos__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.card {
+  flex: 1 1 280px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(27, 29, 30, 0.08);
+}
+
+.card__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.card p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.card__link {
+  margin-top: auto;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.card__link:hover {
+  border-color: var(--color-accent);
+}
+
+/* ============================
+   Habilidades / tabla
+   ============================ */
+.tabla-skills {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tabla-skills caption {
+  text-align: left;
+  font-family: var(--font-mono);
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+  font-size: 0.85rem;
+}
+
+.tabla-skills th,
+.tabla-skills td {
+  text-align: left;
+  padding: 0.75rem var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabla-skills thead th {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ============================
+   Formulario de contacto
+   ============================ */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 480px;
+}
+
+.form__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form__grupo label {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.form__grupo input,
+.form__grupo select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.form__grupo input:focus,
+.form__grupo select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.form__grupo--checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.form__grupo--checkbox label {
+  color: var(--color-text);
+}
+
+.form__feedback {
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+
+.form__feedback.exito {
+  color: var(--color-accent);
+}
+
+.form__feedback.error {
+  color: #B3402A;
+}
+
+/* ============================
+   Footer
+   ============================ */
+.site-footer {
+  text-align: center;
+  padding: var(--space-md);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================
+   Responsividad
+   ============================ */
+@media (max-width: 640px) {
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: var(--space-sm);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md);
+  }
+
+  .nav__links--open {
+    display: flex;
+  }
+
+  .hero,
+  .about {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .hero__img,
+  .about__img {
+    order: -1;
+    width: 60%;
+    margin: 0 auto;
+    max-height: 260px;
+  }
+
+  section {
+    padding: var(--space-md);
+  }
+
+  .tabla-skills {
+    font-size: 0.85rem;
+  }
+}

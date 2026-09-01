@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio de Desarrollo Web</title>
+  <link rel="icon" href="img/logo.jpg">
+  <meta name="description" content="Portafolio de Carolina Cantillo, estudiante de Ingeniería de Sistemas en la Universidad Simón Bolívar. Proyectos de programación web.">
+  <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+         <a href="#inicio" class="nav__brand">&lt;Ingeniera Carolina Cantillo<span class="cursor">/&gt;</span></a>
+         
+         <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+        </button>
+        
+        <ul class="nav__links" id="navLinks">
+            <li><a href="#inicio" class="nav__link" data-section="inicio">Inicio</a></li>
+            <li><a href="#proyectos" class="nav__link" data-section="proyectos">Proyectos</a></li>
+            <li><a href="#habilidades" class="nav__link" data-section="habilidades">Habilidades</a></li>
+            <li><a href="#contacto" class="nav__link" data-section="contacto">Contacto</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">// Primer Parcial Tecnologias Web</p>
+       <h1>Hola, soy <span class="accent">Carolina Cantillo</span>.<br>Estudiante de Ingeniería de Sistemas.</h1>
+        <p class="hero__lead">
+            Estudiante de Ingeniería de Sistemas en la Universidad Simón Bolívar,
+            interesada en análisis de datos, redes, ciberseguridad y programación web.
+        </p>
+        <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+      </div>
+      <img src="img/inicio.jpg" alt="Ilustración de una desarrolladora frente a una pantalla con líneas de código" class="hero__img">
+    </section>
+
+    <section id="sobre-mi" class="about">
+      <img src="img/sobremi.jpg" alt="Fotografia de la ingeniera en estilo animado" class="about__img">
+      <div class="about__text">
+        <h2>Sobre mí</h2>
+        <p>
+          Estudiante de Ingeniería de Sistemas en la Universidad Simón Bolívar.
+          Me muevo entre el análisis de datos, redes y ciberseguridad, y también
+          programación web — este portafolio es mi proyecto parcial de Tecnologías
+          Web, hecho con HTML semántico, CSS con Flexbox y JavaScript sobre el DOM.
+        </p>
+        <p>
+         Fuera de este proyecto, mis áreas de interés son el análisis de datos, 
+         las redes y la ciberseguridad — la programación web es otra de mis ramas,
+         y este sitio es una forma de ponerla en práctica de principio a fin.
+        </p>
+      </div>
+    </section>
+
+    <section id="proyectos" class="proyectos">
+      <h2>Proyectos</h2>
+      <p class="section-lead">Un vistazo a mi trabajo en desarrollo web, análisis de datos, redes y ciberseguridad.</p>
+
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar proyectos por categoría">
+        <button class="filtro" data-category="todos" aria-pressed="true">Todos</button>
+        <button class="filtro" data-category="web" aria-pressed="false">Desarrollo web</button>
+        <button class="filtro" data-category="datos" aria-pressed="false">Análisis de datos</button>
+        <button class="filtro" data-category="redes" aria-pressed="false">Redes</button>
+        <button class="filtro" data-category="ciberseguridad" aria-pressed="false">Ciberseguridad</button>
+    </div>
+
+      <div class="proyectos__grid" id="proyectosGrid">
+        <!-- Tarjetas de proyectos se generadas por JavaScript  -->
+      </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2>Habilidades</h2>
+        <table class="tabla-skills">
+            <caption>Stack técnico y áreas de dominio</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Tecnología / Herramienta</th>
+                    <th scope="col">Área</th>
+                    <th scope="col">Nivel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">HTML semántico y CSS / Flexbox</th>
+                    <td>Desarrollo web</td>
+                    <td>Intermedio</td>
+                </tr>
+                <tr>
+                    <th scope="row">JavaScript / DOM</th>
+                    <td>Desarrollo web</td>
+                    <td>Intermedio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Python / SQL</th>
+                    <td>Análisis de datos</td>
+                    <td>Intermedio</td>
+                </tr>
+                <tr>
+                    <th scope="row">Fundamentos de redes</th>
+                    <td>Redes</td>
+                    <td>Básico</td>
+                </tr>
+                <tr>
+                    <th scope="row">Buenas prácticas de seguridad</th>
+                    <td>Ciberseguridad</td>
+                    <td>Básico</td>
+                </tr>
+                <tr>
+                    <th scope="row">Git y GitHub</th>
+                    <td>Control de versiones</td>
+                    <td>Intermedio</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>Contacto</h2>
+      <p class="section-lead">¿Tienes un proyecto en mente? Escríbeme.</p>
+
+      <form id="formContacto" class="form" novalidate>
+        <div class="form__grupo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="form__grupo">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div class="form__grupo">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto" required>
+            <option value="">Selecciona una opción</option>
+            <option value="proyecto">Propuesta de proyecto</option>
+            <option value="empleo">Oferta laboral</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form__grupo">
+          <label for="fecha">Fecha ideal de contacto</label>
+          <input type="date" id="fecha" name="fecha">
+        </div>
+
+        <div class="form__grupo form__grupo--checkbox">
+          <input type="checkbox" id="terminos" name="terminos" required>
+          <label for="terminos">Acepto ser contactado por este medio</label>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+
+        <div id="formFeedback" class="form__feedback" aria-live="polite"></div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="anioActual"></span> Carolina Cantillo M. Proyecto parcial — Tecnologías Web.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

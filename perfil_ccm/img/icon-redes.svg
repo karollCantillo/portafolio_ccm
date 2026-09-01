@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-labelledby="tr">
+<title id="tr">Icono de red con nodos conectados</title>
+<rect width="200" height="140" rx="12" fill="#EDEBE2"/>
+<line x1="100" y1="30" x2="45" y2="70" stroke="#1B1D1E" stroke-width="3"/>
+<line x1="100" y1="30" x2="155" y2="70" stroke="#1B1D1E" stroke-width="3"/>
+<line x1="45" y1="70" x2="100" y2="110" stroke="#1B1D1E" stroke-width="3"/>
+<line x1="155" y1="70" x2="100" y2="110" stroke="#1B1D1E" stroke-width="3"/>
+<line x1="45" y1="70" x2="155" y2="70" stroke="#1B1D1E" stroke-width="3"/>
+<circle cx="100" cy="30" r="12" fill="#2F6F62"/>
+<circle cx="45" cy="70" r="12" fill="#2F6F62"/>
+<circle cx="155" cy="70" r="12" fill="#2F6F62"/>
+<circle cx="100" cy="110" r="12" fill="#2F6F62"/>
+</svg>

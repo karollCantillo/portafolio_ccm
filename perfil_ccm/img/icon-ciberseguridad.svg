@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-labelledby="tc">
+<title id="tc">Icono de escudo de ciberseguridad con candado</title>
+<rect width="200" height="140" rx="12" fill="#EDEBE2"/>
+<path d="M100 20 L150 36 V70 C150 100 128 118 100 128 C72 118 50 100 50 70 V36 Z" fill="#1B1D1E"/>
+<rect x="86" y="66" width="28" height="22" rx="4" fill="#FAFAF8"/>
+<path d="M92 66 v-8 a8 8 0 0 1 16 0 v8" fill="none" stroke="#FAFAF8" stroke-width="4"/>
+<circle cx="100" cy="76" r="3" fill="#2F6F62"/>
+</svg>
